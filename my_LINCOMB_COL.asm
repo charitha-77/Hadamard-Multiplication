@@ -44,18 +44,10 @@ loop_j:
        imul r13, [rbx]        ;r13=mat1[j][i]*s1
        mov r12, rcx           ;r12=s2
        mov rbx, rdx           ;rbx=pointer to matrix2
-       mov r10, r14
-       imul r10, r9
-       add r10, r15
-       shl r10, 3             ;r10=(r9*j+i)*8
        add rbx, r10
        imul r12, [rbx]        ;r12=s2*mat2[j][i]
        add r13, r12           
        mov rbx, r8
-       mov r10, r14
-       imul r10, r9
-       add r10, r15
-       shl r10, 3
        add rbx, r10
        mov [rbx], r13
        add r14, 1
